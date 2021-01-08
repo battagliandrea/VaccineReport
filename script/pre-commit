@@ -1,0 +1,42 @@
+#!/bin/bash
+
+echo "******************************************** "
+echo "*"
+echo "*  PRE-COMMIT  *"
+echo "*"
+echo "******************************************** "
+
+echo "******************************************** "
+echo "*"
+echo "* GRADLE ktlintFormat: Executing...  *"
+echo "*"
+echo "******************************************** "
+
+./gradlew ktlintFormat
+ktlintStatus=$?
+if [ "ktlintStatus" -ne 0 ]
+then
+  echo "KTLint failure, git push aborted."
+  exit 1
+fi
+
+echo "******************************************** "
+echo "*"
+echo "* GRADLE lint: Executing...  *"
+echo "*"
+echo "******************************************** "
+
+./gradlew lint
+lintStatus=$?
+if [ "$lintStatus" -ne 0 ]
+then
+  echo "Lint failure, git push aborted."
+  echo "Open ${lintReportPath} in a browser to see Lint Report"
+  exit 1
+fi
+
+exit ${lintStatus}
+
+
+
+

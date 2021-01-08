@@ -1,4 +1,4 @@
-import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 
 plugins {
     id(GradlePluginId.ANDROID_LIBRARY)

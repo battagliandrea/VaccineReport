@@ -15,6 +15,6 @@ dependencies {
 
 val jar by tasks.getting(Jar::class) {
     manifest {
-        attributes["Lint-Registry-v2"] = "com.battagliandrea.lintrules.MyIssueRegistry"
+        attributes["Lint-Registry-v2"] = "com.ab.lintrules.MyIssueRegistry"
     }
 }

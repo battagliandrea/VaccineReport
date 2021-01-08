@@ -1,8 +1,8 @@
 package com.ab.lintrules
 
+import com.ab.lintrules.importrules.ISSUE_IMPORT_DETECTOR
 import com.android.tools.lint.client.api.IssueRegistry
 import com.android.tools.lint.detector.api.Issue
-import com.ab.lintrules.importrules.ISSUE_IMPORT_DETECTOR
 
 class MyIssueRegistry : IssueRegistry() {
 

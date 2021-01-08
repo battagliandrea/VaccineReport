@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">VaccineReport</string>
+
+    <string name="title_feature_splash">Feature Splash</string>
+
+
 </resources>

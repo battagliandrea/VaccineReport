@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        android:paddingTop="@dimen/summary_banner_height"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/fragment_summary_list_item"/>
+
+    <LinearLayout
+        android:id="@+id/summaryBanner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/summary_banner_height"
+        android:background="@drawable/bkg_banner"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/default_double_distance"
+            android:paddingEnd="@dimen/default_double_distance"
+            android:textAppearance="@style/VaccineTypography.Headline5"
+            android:textColor="?android:textColor"
+            android:text="@string/feature_summary_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/default_double_distance"
+            android:paddingEnd="@dimen/default_double_distance"
+            android:textAppearance="@style/VaccineTypography.Body1"
+            android:textColor="?android:textColor"
+            android:text="@string/feature_summary_description" />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

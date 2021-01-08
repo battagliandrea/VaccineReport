@@ -18,5 +18,5 @@ internal abstract class SplashModule {
     @Binds
     @IntoMap
     @DaggerViewModelKey(SplashViewModel::class)
-    abstract fun bindCharacterListViewModel(viewModel: SplashViewModel): ViewModel
+    abstract fun bindSplashListViewModel(viewModel: SplashViewModel): ViewModel
 }

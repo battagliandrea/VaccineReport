@@ -10,6 +10,7 @@ object ModuleDependency {
     const val LINT_RULES = ":lintrules"
 
     const val FEATURE_SPLASH = ":feature_splash"
+    const val FEATURE_SUMMARY= ":feature_summary"
 
     fun getDynamicFeatureModules() =
         ModuleDependency::class.memberProperties

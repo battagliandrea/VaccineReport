@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="summary_banner_height">96dp</dimen>
+
+    <dimen name="list_item_height">96dp</dimen>
+
+    <dimen name="category_list_item_width">128dp</dimen>
+    <dimen name="category_list_item_height">96dp</dimen>
+</resources>

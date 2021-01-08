@@ -1,8 +1,8 @@
 plugins {
     id(GradlePluginId.ANDROID_DYNAMIC_FEATURE)
     id(GradlePluginId.KOTLIN_ANDROID)
-    id(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
     id(GradlePluginId.KOTLIN_KAPT)
+    id(GradlePluginId.SAFE_ARGS)
 }
 
 android {
@@ -14,6 +14,12 @@ android {
 
         versionCode = AndroidConfig.VERSION_CODE
         versionName = AndroidConfig.VERSION_NAME
+    }
+
+    buildFeatures.viewBinding = true
+
+    lintOptions {
+        disable("MissingClass")
     }
 
     buildTypes {

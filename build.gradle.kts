@@ -4,13 +4,12 @@ import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 plugins {
     id(GradlePluginId.KTLINT_GRADLE) version GradlePluginVersion.KTLINT_GRADLE
 
-    id(GradlePluginId.KOTLIN_JVM) version GradlePluginVersion.KOTLIN apply false
-    id(GradlePluginId.KOTLIN_ANDROID) version GradlePluginVersion.KOTLIN apply false
-    id(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS) version GradlePluginVersion.KOTLIN apply false
-    id(GradlePluginId.ANDROID_APPLICATION) version GradlePluginVersion.ANDROID_GRADLE apply false
-    id(GradlePluginId.ANDROID_DYNAMIC_FEATURE) version GradlePluginVersion.ANDROID_GRADLE apply false
-    id(GradlePluginId.ANDROID_LIBRARY) version GradlePluginVersion.ANDROID_GRADLE apply false
-//    id(GradlePluginId.SAFE_ARGS) apply false
+    id(GradlePluginId.KOTLIN_JVM) apply false
+    id(GradlePluginId.KOTLIN_ANDROID) apply false
+    id(GradlePluginId.ANDROID_APPLICATION) apply false
+    id(GradlePluginId.ANDROID_DYNAMIC_FEATURE) apply false
+    id(GradlePluginId.ANDROID_LIBRARY) apply false
+    id(GradlePluginId.SAFE_ARGS) apply false
 }
 
 allprojects {
@@ -63,10 +62,4 @@ tasks.withType<KotlinCompile> {
 
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
-}
-buildscript {
-    val kotlin_version by extra("1.3.72")
-    dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
-    }
 }

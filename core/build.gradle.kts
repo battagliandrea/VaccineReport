@@ -3,7 +3,6 @@
 plugins {
     id(GradlePluginId.ANDROID_LIBRARY)
     id(GradlePluginId.KOTLIN_ANDROID)
-    id(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
     id(GradlePluginId.KOTLIN_KAPT)
 }
 
@@ -18,15 +17,25 @@ android {
         versionName = AndroidConfig.VERSION_NAME
     }
 
+    buildFeatures.viewBinding = true
+
+    lintOptions {
+        disable("MissingClass")
+    }
+
     buildTypes {
 
         getByName(BuildType.RELEASE) {
             isMinifyEnabled = BuildTypeRelease.isMinifyEnabled
             proguardFiles("proguard-android.txt", "proguard-rules.pro")
+
+            buildConfigField("String", "baseUrl", "\"https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/\"")
         }
 
         getByName(BuildType.DEBUG) {
             isMinifyEnabled = BuildTypeDebug.isMinifyEnabled
+
+            buildConfigField("String", "baseUrl", "\"https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/\"")
         }
     }
 
@@ -51,6 +60,8 @@ dependencies {
     api(LibraryDependency.CORE_KTX)
     api(LibraryDependency.FRAGMENT_KTX)
     api(LibraryDependency.LIFECYCLE_EXTENSIONS)
+    api(LibraryDependency.LIFECYCLE_RUNTIME)
+    api(LibraryDependency.LIFECYCLE_JAVA_8)
     api(LibraryDependency.LIFECYCLE_VIEW_MODEL_KTX)
     api(LibraryDependency.LIFECYCLE_VIEW_MODEL_SAVED_STATE)
 

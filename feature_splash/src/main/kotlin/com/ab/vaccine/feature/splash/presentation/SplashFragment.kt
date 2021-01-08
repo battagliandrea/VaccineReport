@@ -5,17 +5,20 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import com.ab.vaccine.core.presentation.BaseFragment
+import androidx.navigation.fragment.findNavController
+import com.ab.vaccine.R as ResApp
+import com.ab.vaccine.core.delegate.viewBinding
 import com.ab.vaccine.core.presentation.extensions.observe
 import com.ab.vaccine.feature.splash.R
+import com.ab.vaccine.feature.splash.databinding.FragmentSplashBinding
 import com.ab.vaccine.feature.splash.di.SplashComponent
 import com.ab.vaccine.feature.splash.di.SplashInjector
 import javax.inject.Inject
-import kotlinx.android.synthetic.main.fragment_splash.*
 
-class SplashFragment @Inject constructor() : BaseFragment() {
+class SplashFragment @Inject constructor() : Fragment(R.layout.fragment_splash) {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -30,7 +33,7 @@ class SplashFragment @Inject constructor() : BaseFragment() {
         SplashComponent.INSTANCE.inject(this)
     }
 
-    override val layoutResourceId = R.layout.fragment_splash
+    private val binding by viewBinding(FragmentSplashBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -45,6 +48,8 @@ class SplashFragment @Inject constructor() : BaseFragment() {
 
     private fun onStateChange(state: SplashViewModel.ViewState) {
         if (!state.waiting) {
+            findNavController().navigate(ResApp.id.action_splashFragment_to_summaryActivity)
+            activity?.finish()
         }
     }
 
@@ -60,9 +65,9 @@ class SplashFragment @Inject constructor() : BaseFragment() {
             }
 
             override fun onAnimationStart(p0: Animation?) {
-                container.visibility = View.VISIBLE
+                binding.container.visibility = View.VISIBLE
             }
         })
-        container.startAnimation(alphaAnimation)
+        binding.container.startAnimation(alphaAnimation)
     }
 }

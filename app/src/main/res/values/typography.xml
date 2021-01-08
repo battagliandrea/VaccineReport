@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="VaccineTypography.Headline4" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">34sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/raleway_medium</item>
+    </style>
+
+    <style name="VaccineTypography.Headline5" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/raleway_medium</item>
+    </style>
+
+    <style name="VaccineTypography.Headline6" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/raleway_medium</item>
+    </style>
+
+    <style name="VaccineTypography.Body1" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontFamily">@font/raleway</item>
+    </style>
+
+    <style name="VaccineTypography.Body2" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontFamily">@font/raleway</item>
+    </style>
+
+</resources>

@@ -2,6 +2,37 @@
     <string name="app_name">VaccineReport</string>
 
     <string name="title_feature_splash">Feature Splash</string>
+    <string name="title_feature_summary">Feature Summary</string>
 
+    <string name="last_update">Last update</string>
 
+    <string name="feature_summary_title">Vaccine Administration</string>
+    <string name="feature_summary_description">Number of doses administered in Italy. For each region</string>
+    <string name="feature_summary_registry_range_title">Administration by registry range</string>
+    <string name="feature_summary_category_title">Administration by category</string>
+    <string name="feature_summary_category_rsa">Rsa</string>
+    <string name="feature_summary_category_health_worker">Health Operators</string>
+    <string name="feature_summary_category_other">Non-medical</string>
+
+    <string name="ABR">Abruzzo</string>
+    <string name="BAS">Basilicata</string>
+    <string name="CAL">Calabria</string>
+    <string name="CAM">Campania</string>
+    <string name="EMR">Emilia Romagna</string>
+    <string name="FVG">Friuli Venezia Giulia</string>
+    <string name="LAZ">Lazio</string>
+    <string name="LIG">Liguria</string>
+    <string name="LOM">Lombardia</string>
+    <string name="MAR">Marche</string>
+    <string name="MOL">Molise</string>
+    <string name="PAB">Prov. Aut. Bolzano</string>
+    <string name="PAT">Prov. Aut. Trento</string>
+    <string name="PIE">Piemonte</string>
+    <string name="PUG">Puglia</string>
+    <string name="SAR">Sardegna</string>
+    <string name="SIC">Sicilia</string>
+    <string name="TOS">Toscana</string>
+    <string name="UMB">Umbria</string>
+    <string name="VDA">Valle D\'Aosta</string>
+    <string name="VEN">Veneto</string>
 </resources>

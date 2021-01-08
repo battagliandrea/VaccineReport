@@ -1,14 +1,14 @@
 import com.android.build.gradle.internal.dsl.DefaultConfig
 
+apply {
+    from("$rootDir/script/install-git-hooks.gradle")
+}
+
 plugins {
     id(GradlePluginId.ANDROID_APPLICATION)
     id(GradlePluginId.KOTLIN_ANDROID)
-    id(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
     id(GradlePluginId.KOTLIN_KAPT)
-}
-
-apply {
-    from("$rootDir/script/install-git-hooks.gradle")
+    id(GradlePluginId.SAFE_ARGS)
 }
 
 android {
@@ -22,6 +22,8 @@ android {
 
         versionCode = AndroidConfig.VERSION_CODE
         versionName = AndroidConfig.VERSION_NAME
+
+        multiDexEnabled = true
 
         buildConfigField("FEATURE_MODULE_NAMES", getDynamicFeatureModuleNames())
     }
@@ -43,7 +45,13 @@ android {
         }
     }
 
+    buildFeatures.viewBinding = true
+
     dynamicFeatures = ModuleDependency.getDynamicFeatureModules().toMutableSet()
+
+    lintOptions {
+        disable("MissingClass")
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

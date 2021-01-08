@@ -1,18 +1,43 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
     <style name="Theme.VaccineReport" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimary">@color/green_dark</item>
+        <item name="colorPrimaryDark">@color/green_dark</item>
         <item name="colorPrimaryVariant">@color/green</item>
-        <item name="colorOnPrimary">@color/yellow</item>
+        <item name="colorOnPrimary">@color/white</item>
+
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/white</item>
         <item name="colorSecondaryVariant">@color/white</item>
         <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Control -->
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/green</item>
+
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/green_dark</item>
 
         <!-- Customize your theme here. -->
-        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowBackground">@color/blue_grey_800</item>
+
+        <!-- Card -->
+        <item name="cardBackgroundColor">@color/blue_grey_700</item>
+
+        <!-- TextColor -->
+        <item name="android:textColorPrimary">@color/whiteAlpha87</item>
+        <item name="android:textColorPrimaryInverse">@color/blackAlpha87</item>
+        <item name="android:textColorSecondary">@color/blackAlpha87</item>
+        <item name="android:textColorSecondaryInverse">@color/whiteAlpha87</item>
+        <item name="android:textColorTertiary">@color/green</item>
+        <item name="android:textColorTertiaryInverse">@color/green</item>
+        <item name="android:textColor">@color/whiteAlpha87</item>
+    </style>
+
+
+    <style name="Theme.VaccineReport.Toolbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <item name="colorControlNormal">@color/white</item>
     </style>
 </resources>

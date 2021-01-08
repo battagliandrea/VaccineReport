@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_item_height"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_marginStart="@dimen/default_double_distance"
+    android:layout_marginEnd="@dimen/default_double_distance"
+    android:layout_marginTop="@dimen/default_half_distance"
+    android:layout_marginBottom="@dimen/default_half_distance">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bkg_card"
+        android:foreground="@drawable/bkg_card_ripple">
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvArea"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/default_distance"
+        android:paddingEnd="@dimen/default_distance"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAppearance="@style/VaccineTypography.Headline6"
+        android:textColor="?android:textColorPrimary"
+        app:layout_constraintBottom_toTopOf="@id/tvUpdateDate"
+        app:layout_constraintEnd_toStartOf="@id/tvAdministrationPercent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Region Name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUpdateDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/default_distance"
+        android:paddingEnd="@dimen/default_distance"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textAppearance="@style/VaccineTypography.Body2"
+        android:textColor="?android:textColorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/tvArea"
+        app:layout_constraintStart_toStartOf="@id/tvArea"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvAdministrationPercent"
+        tools:text="@tools:sample/date/ddmmyy" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAdministrationPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/default_distance"
+        android:paddingEnd="@dimen/default_distance"
+        android:textAppearance="@style/VaccineTypography.Headline4"
+        android:textColor="?android:textColorTertiary"
+        app:layout_constraintStart_toEndOf="@id/tvArea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="40%" />
+
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginEnd="@dimen/radius_default"
+        android:progressDrawable="@drawable/bkg_progress_bar"
+        android:max="100"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:progress="100"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

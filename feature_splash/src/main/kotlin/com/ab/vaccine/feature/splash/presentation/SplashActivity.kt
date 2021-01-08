@@ -1,23 +1,19 @@
 package com.ab.vaccine.feature.splash.presentation
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import com.ab.vaccine.R as ResApp
-import com.ab.vaccine.core.presentation.BaseActivity
+import com.ab.vaccine.core.presentation.extensions.viewBinding
 import com.ab.vaccine.feature.splash.R
-import com.ab.vaccine.presentation.extensions.setupNavHost
-import kotlinx.android.synthetic.main.activity_splash.*
+import com.ab.vaccine.feature.splash.databinding.ActivitySplashBinding
 
-class SplashActivity : BaseActivity() {
+class SplashActivity : AppCompatActivity() {
 
-    private val navGraph: Int = ResApp.navigation.feature_splash_nav_graph
-
-    override val layoutResId: Int = R.layout.activity_splash
+    private val binding by viewBinding(ActivitySplashBinding::inflate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setupNavHost(navGraph, navHostFragment)
+        setContentView(binding.root)
     }
 
     override fun onSupportNavigateUp(): Boolean {

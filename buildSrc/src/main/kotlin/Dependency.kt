@@ -1,5 +1,5 @@
 private object CoreVersion {
-    const val KOTLIN = "1.4.10"
+    const val KOTLIN = "1.4.21"
     const val COROUTINES_ANDROID = "1.3.7"
     const val KTLINT = "0.34.2"
 }
@@ -28,10 +28,10 @@ private object Version {
 }
 
 object GradlePluginVersion {
-    const val ANDROID_GRADLE = "3.4.2"
     const val KTLINT_GRADLE = "9.4.1"
     const val KTLINT = CoreVersion.KTLINT
     const val KOTLIN = CoreVersion.KOTLIN
+    const val SAFE_ARGS = Version.NAVIGATION
 }
 
 
@@ -44,8 +44,8 @@ object GradlePluginId {
     const val KOTLIN_JVM = "org.jetbrains.kotlin.jvm"
     const val KOTLIN_KAPT = "org.jetbrains.kotlin.kapt"
     const val KOTLIN_ANDROID = "org.jetbrains.kotlin.android"
-    const val KOTLIN_ANDROID_EXTENSIONS = "org.jetbrains.kotlin.android.extensions"
     const val KTLINT_GRADLE = "org.jlleitschuh.gradle.ktlint"
+    const val SAFE_ARGS = "androidx.navigation.safeargs.kotlin"
 }
 
 object LibraryDependency {
@@ -62,6 +62,8 @@ object LibraryDependency {
     const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:${Version.FRAGMENT_KTX}"
     const val APP_COMPAT = "androidx.appcompat:appcompat:${Version.APP_COMPAT}"
     const val LIFECYCLE_EXTENSIONS = "android.arch.lifecycle:extensions:${Version.LIFECYCLE}"
+    const val LIFECYCLE_RUNTIME = "androidx.lifecycle:lifecycle-runtime:${Version.LIFECYCLE}"
+    const val LIFECYCLE_JAVA_8 = "androidx.lifecycle:lifecycle-common-java8:${Version.LIFECYCLE}"
     const val LIFECYCLE_VIEW_MODEL_KTX = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.LIFECYCLE}"
     const val LIFECYCLE_VIEW_MODEL_SAVED_STATE = "androidx.lifecycle:lifecycle-viewmodel-savedstate:${Version.LIFECYCLE}"
     const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:${Version.CONSTRAINT_LAYOUT}"
